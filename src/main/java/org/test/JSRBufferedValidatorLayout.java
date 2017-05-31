@@ -80,32 +80,8 @@ public class JSRBufferedValidatorLayout extends Composite  {
 		binder.readBean(pojo);
 		
 	//	binder.withValidator(pojo ->!"test".equals(pojo.getValue()),"Error added bean validation");
-		
-//		binder.setStatusLabel(computedVaadinErrorLabel);
-	
-		//		BinderValidationStatusHandler<Pojo> defaultHandler = binder.getValidationStatusHandler();
 		binder.setStatusLabel(computedVaadinErrorLabel);
-		/*
-		binder.setValidationStatusHandler(status -> {
-			System.out.println("setValidationStatusHandler");
-			List<ValidationResult> errors = status.getValidationErrors();
-
-		    // collect all bean level error messages into a single string,
-		    // separating each message with a <br> tag
-		    String errorMessage = errors.stream().map(ValidationResult::getErrorMessage)
-		        // sanitize the individual error strings to avoid code injection
-		        // since we are displaying the resulting string as HTML
-		        .map(errorString -> Jsoup.clean(errorString, Whitelist.simpleText()))
-		        .collect(Collectors.joining("<br/>"));
-
-		    // finally, display all bean level validation errors in a single label
-		    computedVaadinErrorLabel.setValue(errorMessage);
-		    System.out.println("errorMessage"+errorMessage);
-		    computedVaadinErrorLabel.setVisible(!errorMessage.isEmpty());
-
-		    // Let the default handler show messages for each field
-		    defaultHandler.statusChange(status);
-		});*/
+	
 		
 		return layout;
 	}

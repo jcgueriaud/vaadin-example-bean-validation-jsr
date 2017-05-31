@@ -45,9 +45,7 @@ public class BeanValidatorLayout extends Composite  {
 	private Pojo pojo = new Pojo();
 	
 	private Binder<Pojo> binder = new BeanValidationBinder<Pojo>(Pojo.class);
-	// Try 
-//	private Binder<Pojo> binder = new JSR303ValidationBinder<Pojo>(Pojo.class);
-	
+
     private static Validator validator;
     
     /**

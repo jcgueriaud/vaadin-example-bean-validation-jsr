@@ -5,6 +5,7 @@ package org.test;
 
 import java.time.LocalDate;
 
+import javax.validation.constraints.AssertTrue;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -115,5 +116,15 @@ public class Pojo {
 		this.dateTo = dateTo;
 	}
 	
-	
+
+	@AssertTrue(message = "Error dates to test multiple displayed errors")
+	public boolean isValid() {
+		System.out.print("isValid");
+		LocalDate dateFrom = getDateFrom();
+		LocalDate dateTo = getDateTo();
+		if ((dateFrom != null) && (dateTo != null)) {
+			return !dateFrom.isAfter(dateTo);
+		}
+		return false;
+	}
 }

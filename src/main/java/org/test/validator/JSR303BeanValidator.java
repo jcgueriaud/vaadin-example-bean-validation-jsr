@@ -109,6 +109,10 @@ public class JSR303BeanValidator  implements Validator<Object> {
     @Override
     public ValidationResult apply(final Object value, ValueContext context) {
     	Set<? extends ConstraintViolation<?>> violations = null;
+    	// Hack to display a bean level validation
+    	// It validates multiple constraints in one Vaadin validator
+    	// So the validation result contains only the first error message
+    	// Perhaps create one Vaadin validator for each constraint instead of one validator per field ?
     	if (propertyName == null){
             violations = getJavaxBeanValidator()
                     .validate(value);
