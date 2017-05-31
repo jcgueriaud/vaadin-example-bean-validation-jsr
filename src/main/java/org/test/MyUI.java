@@ -16,6 +16,7 @@ import com.vaadin.ui.UI;
 public class MyUI extends UI {
 	Composite beanValidatorLayout;
 	Composite jSRValidatorLayout;
+	Composite jSRBufferedValidatorLayout;
     
 	@Override
 	protected void init(VaadinRequest vaadinRequest) {
@@ -25,9 +26,9 @@ public class MyUI extends UI {
 		
 		beanValidatorLayout = new BeanValidatorLayout();
 		jSRValidatorLayout = new JSRValidatorLayout();
-		
+		jSRBufferedValidatorLayout = new JSRBufferedValidatorLayout();
 		HorizontalLayout layout = new HorizontalLayout();
-		layout.addComponents(beanValidatorLayout,jSRValidatorLayout);
+		layout.addComponents(beanValidatorLayout,jSRValidatorLayout,jSRBufferedValidatorLayout);
 		setContent(layout);
 	}
 	
